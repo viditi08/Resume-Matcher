@@ -1,70 +1,169 @@
-# Getting Started with Create React App
+# Resume Job Matcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Resume Job Matcher is an AI-powered tool that analyzes your resume against job descriptions to provide comprehensive matching reports, visualizations, and improvement recommendations.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **PDF Resume Parsing**: Upload your resume in PDF format for automatic text extraction
+- **Job Description Analysis**: Fetch and analyze job descriptions directly from URLs
+- **AI-Powered Matching**: Uses Google's Gemini AI to intelligently match your skills and experience to job requirements
+- **Visual Reports**: See skill match percentages and comparisons through interactive charts
+- **Improvement Recommendations**: Get specific suggestions to increase your match rate
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- React.js
+- Interactive visualizations for skill matching
+- CSS3 with responsive design
+- Fetch API for communication with backend
 
-### `npm test`
+### Backend
+- Python with Flask
+- PyPDF2 for PDF parsing
+- LangChain with Google Gemini for AI analysis
+- Web scraping capabilities for job descriptions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Prerequisites
 
-### `npm run build`
+Before you begin, ensure you have the following installed:
+- Node.js (14.x or higher)
+- npm (6.x or higher)
+- Python (3.9 or higher)
+- pip
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/yourusername/resume-job-matcher.git
+cd resume-job-matcher
+```
 
-### `npm run eject`
+### Backend Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   
+   # Windows
+   venv\Scripts\activate
+   
+   # macOS/Linux
+   source venv/bin/activate
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set up environment variables:
+   ```bash
+   # Create a .env file in the project root
+   # Add the following:
+   GEMINI_API_KEY=your_gemini_api_key_here
+   USER_AGENT=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+   ```
+   
+   You can get a Gemini API key at [Google AI Studio](https://makersuite.google.com/).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend Setup
 
-## Learn More
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚗 Running the Application
 
-### Code Splitting
+1. Start the backend server (from the project root):
+   ```bash
+   # Make sure your virtual environment is activated
+   cd backend
+   python app.py
+   ```
+   The backend will start at http://localhost:5000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. In a new terminal, start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   ```
+   The frontend will launch at http://localhost:3000.
 
-### Analyzing the Bundle Size
+## 📝 How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Upload your resume (PDF format only)
+2. Enter the URL of a job posting you're interested in
+3. Click "Analyze Match"
+4. Review your results:
+   - Match percentage
+   - Skills comparison
+   - Missing skills
+   - Suggestions for improvement
+  
+## Output
+![Screenshot 2025-02-26 154129](https://github.com/user-attachments/assets/2d4509cf-6be8-4507-b466-455f993f84c8)
+![Screenshot 2025-02-26 154143](https://github.com/user-attachments/assets/f5a38f71-cb51-4dbe-8066-7362e51e8e16)
+![Screenshot 2025-02-26 154423](https://github.com/user-attachments/assets/3b7ba450-2b27-4168-ac8e-eb9a2f5b219d)
+![Screenshot 2025-02-26 154445](https://github.com/user-attachments/assets/e8f8dd61-8754-45b1-aa03-4eac99732a77)
+![Screenshot 2025-02-26 154504](https://github.com/user-attachments/assets/6c7e1451-d540-43c5-93e0-bf01d6bbe0d6)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/extract-resume` | POST | Extract text from a PDF resume |
+| `/api/fetch-job` | POST | Fetch and extract a job description from a URL |
+| `/api/analyze-match` | POST | Match resume text against job description |
+| `/api/health` | GET | Health check endpoint |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📚 Future Enhancements
+
+- Support for more document formats (DOCX, TXT)
+- Custom job description input option
+- User accounts to save analysis history
+- Keyword optimization suggestions
+- Cover letter generation based on match results
+
+## Troubleshooting
+
+### No Gemini API Key
+
+If you don't have a Google Gemini API key, the application will use mock data for demonstration purposes.
+
+### PDF Parsing Issues
+
+If you encounter issues with PDF parsing, make sure you have PyPDF2 installed:
+```bash
+pip install PyPDF2
+```
+
+### Frontend Dependency Issues
+
+If you face issues with frontend dependencies, try:
+```bash
+cd frontend
+npm install --force
+```
+
+## 📃 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+*Made with ❤️ by Viditi Vartak*
